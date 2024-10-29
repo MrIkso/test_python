@@ -21,13 +21,13 @@ async def get_video_from_site(some_anime):
             'link': []
         }
 
-        async with session.post(url='https://anitube.in.ua/', data=datas, headers=headers) as response:
+        async with session.post(url='https://cors.apn.monster/https://anitube.in.ua/', data=datas, headers=headers) as response:
             # async with aiofiles.open("D:\\apps\\file1.html", "r", encoding="UTF-8") as file:
             soup = BeautifulSoup(await response.text(), 'html.parser')
             anime_pages = soup.findAll('div', class_='story_c')
 
             for page in anime_pages:
-                # print(page)
+                #print(page)
 
                 img_links = page.findAll('img')
 
